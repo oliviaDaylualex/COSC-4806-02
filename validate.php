@@ -13,7 +13,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 if ($user && password_verify($password, $user['password_hash'])) {
     $_SESSION['authenticated'] = true;
     $_SESSION['username'] = $username;
-    header('Location: welcome.php');
+    header('Location: index.php');
     exit();
 } else {
     echo "Invalid login. <a href='login.php'>Try again</a>";
